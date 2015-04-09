@@ -1,0 +1,77 @@
+<div ng-repeat="detail in details">
+		<div>
+			<a href="{{detail.url}}" target="_blank">{{ detail.title }}</a>, {{detail.rating}} ({{ detail.year }})<br/>
+			{{ detail.runtime }}, {{detail.genre}}<br/>
+			{{ detail.description }}
+		</div>
+</div>
+
+<div>
+		<h3>Add New Schedule Details</h3>
+		<div class="error-message" ng-show="errormsg">
+			{{errormsg}}
+		</div>
+		
+
+		<form name="scheduleForm" ng-submit="addDetail(program)" novalidate>
+
+			<p><label for="program-title">Enter Program Title</label>
+			<input type="text" name="title" ng-model="program.title" required>
+			</p>
+
+			<p><label for="program-rating">Select Rating</label>
+			<select name="Rating" ng-model="program.rating" ng-options="obj.value as obj.label for obj in program.rating">
+				<option value="">Rating</option>
+			</select>
+			</p>
+
+			<p><label for="program-year">Enter Release Year</label>
+			<input type="text" name="year" ng-model="program.year" required>
+			</p>
+
+			<p><label for="program-genre">Select Genre</label>
+			<select name="genre" ng-model="program.genre" ng-options="obj.value as obj.label for obj in program.genretypes">
+				<option value="">Category</option>
+			</select>
+			</p>
+
+			<p><label for="program-runtime">Enter Program Run Time</label>
+			<input type="text" name="runtime" ng-model="program.runtime" required>
+			</p>
+
+			<p><label for="description">Enter Program Description</label>
+			<textarea name="description" ng-model="program.desc" rows="4" cols="50"></textarea>
+			</p>
+
+			
+			<!--p><br/><label for="program-day">Select Day</label>
+			<select name="day" ng-model="program.day" ng-options="obj.value as obj.label for obj in program.day">
+				<option value="">Day</option>
+			</select>
+			
+
+			<label for="program-month">Select Month</label>
+			<select name="month" ng-model="program.month" ng-options="obj.value as obj.label for obj in program.month">
+				<option value="">Month</option>
+			</select>
+
+
+			<label for="program-date">Select Date</label>
+			<select name="date" ng-model="program.date" ng-options="obj.value as obj.label for obj in program.date">
+				<option value="">Date</option>
+			</select>
+
+			<label for="program-scheduleyear">Select Year</label>
+			<select name="scheduleyear" ng-model="program.scheduleyear" ng-options="obj.value as obj.label for obj in program.scheduleyear">
+				<option value="">Year</option>
+			</select> 
+			</p-->
+			
+			<p><label for="program-url">Enter Program URL</label>
+			<input type="text" name="url" ng-model="program.url">
+			</p>
+
+			<p><input type="submit" value="Add Schedule Detail"></p>
+		</form>
+	</div>	
+

@@ -1,0 +1,10 @@
+<h3>Schedule Details</h3>
+
+
+<div ng-repeat="detail in details">
+		<div>
+			<a href="{{detail.url}}" target="_blank">{{ detail.title }}</a>, {{detail.rating}} ({{ detail.year }})<br/>
+			{{ detail.runtime }}, {{detail.genre}}<br/>
+			{{ detail.description }}
+		</div>
+	</div>
