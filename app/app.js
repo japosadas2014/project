@@ -6,4 +6,4 @@ scheduleApp.config(function ($routeProvider) {
         .when("/schedule", {controller: "scheduleDetailsController", templateUrl: "app/partials/schedule_detail_partial.html" })
         .when("/add-schedule",  { controller: "scheduleController", templateUrl: "app/partials/add_schedule_partial.html" })
         .otherwise({ redirectTo: "app/partials/404_page.html" });
-});/add
+});
