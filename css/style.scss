@@ -31,10 +31,11 @@ p {
     font-weight: bold;
 }
 
-div {
+div.detail {
     margin: 0;
     padding: 10px 0 10px 0;
     width: 100%;
+    border-bottom: 1px solid #ccc;
 }
 
 .style404 {
@@ -42,3 +43,4 @@ div {
     color: red;
     font-weight: bold;
 }
+
