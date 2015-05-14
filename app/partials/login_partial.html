@@ -1,0 +1,20 @@
+<h3>Login</h3>
+
+	<div class="error-message" ng-show="errormsg">
+		{{errormsg}}
+	</div>
+		
+<div>
+	<form name="loginForm" ng-submit="validateLogin(login)" novalidate>
+
+		<p><label for="login-user">Username</label>
+		<input type="text" name="user" ng-model="login.user" required>
+		</p>
+
+		<p><label for="login-password">Password</label>
+		<input type="text" name="password" ng-model="login.password" required>
+		</p>
+
+		<p><input type="submit" value="Sign In"></p>
+	</form>
+</div>	

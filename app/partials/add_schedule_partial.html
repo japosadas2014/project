@@ -1,8 +1,9 @@
 <div ng-repeat="detail in details">
 		<div>
 			<a href="{{detail.url}}" target="_blank">{{ detail.title }}</a>, {{detail.rating}} ({{ detail.year }})<br/>
+			<img ng-src="{{detail.image}}"><br/>
 			{{ detail.runtime }}, {{detail.genre}}<br/>
-			{{ detail.description }}
+			{{ detail.desc }}
 		</div>
 </div>
 
@@ -69,6 +70,10 @@
 			
 			<p><label for="program-url">Enter Program URL</label>
 			<input type="text" name="url" ng-model="program.url">
+			</p>
+
+			<p><label for="program-image">Upload an Image</label>
+			<input type="file" id="file-upload" ng-click="addImage()">
 			</p>
 
 			<p><input type="submit" value="Add Schedule Detail"></p>

@@ -3,6 +3,8 @@
 	function scheduleController($scope){
 		$scope.program = {};
 
+  		$scope.viewList = true;
+
 		$scope.errormsg = "";
 
 		$scope.details = [];
@@ -112,19 +114,14 @@
 				$scope.errormsg = "Run Time is in the incorrect numeric format: 00:00";
 			} else if (!angular.isDefined($scope.program.url))  {
 				$scope.errormsg = "URL is missing";
-			} else if (!is_valid_runtime($scope.program.url)) {
+			} else if (!is_valid_url($scope.program.url)) {
 				$scope.errormsg = "URL is in the incorrect format: http://www.abc.com";
 			} else {
 				$scope.errormsg = '';
 				$scope.details.push( program );
 				$scope.program = {};
-
-
 			}
-
 		}
-
-
 	};
 
 	scheduleApp.controller("scheduleController", scheduleController);
@@ -154,3 +151,25 @@ function is_valid_url (item) {
 		return false;
 	}
 }
+
+var imageUpped;
+
+$scope.addImage = function(new_image) {
+filepicker.setKey("ArnCVV3SAaRjVTRznh6Abz");
+
+filepicker.pick(
+  {
+    mimetypes: ['image/*', 'text/plain'],
+    container: 'window',
+    services:['COMPUTER'],
+  },
+  function(Blob){
+    //console.log(JSON.stringify(Blob));
+    imageUpped = Blob.url;
+    console.log(imageUpped);
+  },
+  function(FPError){
+    console.log(FPError.toString());
+  }
+);
+};

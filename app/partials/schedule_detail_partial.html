@@ -3,7 +3,7 @@
 
 <div ng-repeat="detail in details">
 		<div class="detail">
-			<a href="{{detail.url}}" target="_blank">{{ detail.title }}</a>, {{detail.rating}} ({{ detail.year }})<br/>
+			<a ng-href="{{detail.url}}" target="_blank">{{ detail.title }}</a>, {{detail.rating}} ({{ detail.year }})<br/>
 			{{ detail.runtime }}, {{detail.genre}}<br/>
 			{{ detail.description }}
 		</div>
